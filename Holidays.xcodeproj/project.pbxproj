@@ -7,12 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E01A45C83BAE25E15F1BA5A0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2D4D17D5468F3E52D09D9C /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		EA1A869B1B923D3700A7865A /* HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A869A1B923D3700A7865A /* HelperTests.swift */; };
+		EA1A869D1B9240CA00A7865A /* BaseHolidaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A869C1B9240CA00A7865A /* BaseHolidaysViewController.swift */; };
+		EA1A869F1B9241C500A7865A /* BaseHolidaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A869E1B9241C500A7865A /* BaseHolidaysTableViewController.swift */; };
+		EA1A86A11B9246B800A7865A /* EventStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A86A01B9246B800A7865A /* EventStoreHelper.swift */; };
+		EA287FBD1B9222E8000CB74F /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FB51B9222E8000CB74F /* DataAccess.swift */; };
+		EA287FBE1B9222E8000CB74F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FB61B9222E8000CB74F /* Helpers.swift */; };
+		EA287FBF1B9222E8000CB74F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FB71B9222E8000CB74F /* Repository.swift */; };
+		EA287FC01B9222E8000CB74F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FB81B9222E8000CB74F /* Extensions.swift */; };
+		EA287FC11B9222E8000CB74F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FB91B9222E8000CB74F /* Style.swift */; };
+		EA287FC21B9222E8000CB74F /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FBA1B9222E8000CB74F /* CalendarHelper.swift */; };
+		EA287FC31B9222E8000CB74F /* BackgroundDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FBB1B9222E8000CB74F /* BackgroundDataAccess.swift */; };
+		EA287FC41B9222E8000CB74F /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FBC1B9222E8000CB74F /* NotificationHelper.swift */; };
+		EA287FC71B9222F9000CB74F /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FC51B9222F9000CB74F /* Holiday.swift */; };
+		EA287FC81B9222F9000CB74F /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FC61B9222F9000CB74F /* Country.swift */; };
+		EA287FCD1B922311000CB74F /* CountriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FC91B922311000CB74F /* CountriesTableViewCell.swift */; };
+		EA287FCE1B922311000CB74F /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FCA1B922311000CB74F /* HolidayTableViewCell.swift */; };
+		EA287FCF1B922311000CB74F /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FCB1B922311000CB74F /* CountriesViewController.swift */; };
+		EA287FD01B922311000CB74F /* HolidaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FCC1B922311000CB74F /* HolidaysTableViewController.swift */; };
+		EA287FD21B922324000CB74F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA287FD11B922324000CB74F /* Main.storyboard */; };
 		EACDD8F61B9152A000958432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDD8F51B9152A000958432 /* AppDelegate.swift */; };
-		EACDD8F81B9152A000958432 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDD8F71B9152A000958432 /* ViewController.swift */; };
-		EACDD8FB1B9152A000958432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACDD8F91B9152A000958432 /* Main.storyboard */; };
 		EACDD8FD1B9152A000958432 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACDD8FC1B9152A000958432 /* Images.xcassets */; };
 		EACDD9001B9152A000958432 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EACDD8FE1B9152A000958432 /* LaunchScreen.xib */; };
-		EACDD90C1B9152A000958432 /* HolidaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDD90B1B9152A000958432 /* HolidaysTests.swift */; };
+		EACDD90C1B9152A000958432 /* HolidayModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDD90B1B9152A000958432 /* HolidayModelsTests.swift */; };
+		EAE630661B9235640026CD7A /* CountryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE630651B9235640026CD7A /* CountryModelTests.swift */; };
+		EAE630681B9238460026CD7A /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE630671B9238460026CD7A /* ExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +46,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C2D4D17D5468F3E52D09D9C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26DCAD1C62A6C20A4AC2D1C6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EA1A869A1B923D3700A7865A /* HelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperTests.swift; sourceTree = "<group>"; };
+		EA1A869C1B9240CA00A7865A /* BaseHolidaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHolidaysViewController.swift; sourceTree = "<group>"; };
+		EA1A869E1B9241C500A7865A /* BaseHolidaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHolidaysTableViewController.swift; sourceTree = "<group>"; };
+		EA1A86A01B9246B800A7865A /* EventStoreHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStoreHelper.swift; sourceTree = "<group>"; };
+		EA287FB51B9222E8000CB74F /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
+		EA287FB61B9222E8000CB74F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		EA287FB71B9222E8000CB74F /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		EA287FB81B9222E8000CB74F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EA287FB91B9222E8000CB74F /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		EA287FBA1B9222E8000CB74F /* CalendarHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		EA287FBB1B9222E8000CB74F /* BackgroundDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundDataAccess.swift; sourceTree = "<group>"; };
+		EA287FBC1B9222E8000CB74F /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		EA287FC51B9222F9000CB74F /* Holiday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
+		EA287FC61B9222F9000CB74F /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		EA287FC91B922311000CB74F /* CountriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesTableViewCell.swift; sourceTree = "<group>"; };
+		EA287FCA1B922311000CB74F /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
+		EA287FCB1B922311000CB74F /* CountriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		EA287FCC1B922311000CB74F /* HolidaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolidaysTableViewController.swift; sourceTree = "<group>"; };
+		EA287FD11B922324000CB74F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EACDD8F01B9152A000958432 /* Holidays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Holidays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACDD8F41B9152A000958432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EACDD8F51B9152A000958432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EACDD8F71B9152A000958432 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EACDD8FA1B9152A000958432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EACDD8FC1B9152A000958432 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EACDD8FF1B9152A000958432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EACDD9051B9152A000958432 /* HolidaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HolidaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACDD90A1B9152A000958432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EACDD90B1B9152A000958432 /* HolidaysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysTests.swift; sourceTree = "<group>"; };
+		EACDD90B1B9152A000958432 /* HolidayModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayModelsTests.swift; sourceTree = "<group>"; };
+		EAE630651B9235640026CD7A /* CountryModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryModelTests.swift; sourceTree = "<group>"; };
+		EAE630671B9238460026CD7A /* ExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		EDDE5DED52581721E0DC99FA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E01A45C83BAE25E15F1BA5A0 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +99,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3419E1DADEB906CDBD05A80F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26DCAD1C62A6C20A4AC2D1C6 /* Pods.debug.xcconfig */,
+				EDDE5DED52581721E0DC99FA /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A966926C72AE234BEE4F056B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C2D4D17D5468F3E52D09D9C /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA287FD31B922343000CB74F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EA287FB51B9222E8000CB74F /* DataAccess.swift */,
+				EA287FB61B9222E8000CB74F /* Helpers.swift */,
+				EA287FB71B9222E8000CB74F /* Repository.swift */,
+				EA287FB81B9222E8000CB74F /* Extensions.swift */,
+				EA287FB91B9222E8000CB74F /* Style.swift */,
+				EA287FBA1B9222E8000CB74F /* CalendarHelper.swift */,
+				EA287FBB1B9222E8000CB74F /* BackgroundDataAccess.swift */,
+				EA287FBC1B9222E8000CB74F /* NotificationHelper.swift */,
+				EA1A86A01B9246B800A7865A /* EventStoreHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		EA287FD41B922348000CB74F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA287FC51B9222F9000CB74F /* Holiday.swift */,
+				EA287FC61B9222F9000CB74F /* Country.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EA287FD51B922354000CB74F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA287FC91B922311000CB74F /* CountriesTableViewCell.swift */,
+				EA287FCA1B922311000CB74F /* HolidayTableViewCell.swift */,
+				EA287FCB1B922311000CB74F /* CountriesViewController.swift */,
+				EA287FCC1B922311000CB74F /* HolidaysTableViewController.swift */,
+				EA1A869C1B9240CA00A7865A /* BaseHolidaysViewController.swift */,
+				EA1A869E1B9241C500A7865A /* BaseHolidaysTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		EACDD8E71B9152A000958432 = {
 			isa = PBXGroup;
 			children = (
 				EACDD8F21B9152A000958432 /* Holidays */,
 				EACDD9081B9152A000958432 /* HolidaysTests */,
 				EACDD8F11B9152A000958432 /* Products */,
+				3419E1DADEB906CDBD05A80F /* Pods */,
+				A966926C72AE234BEE4F056B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,8 +178,10 @@
 			isa = PBXGroup;
 			children = (
 				EACDD8F51B9152A000958432 /* AppDelegate.swift */,
-				EACDD8F71B9152A000958432 /* ViewController.swift */,
-				EACDD8F91B9152A000958432 /* Main.storyboard */,
+				EA287FD31B922343000CB74F /* Helpers */,
+				EA287FD41B922348000CB74F /* Models */,
+				EA287FD51B922354000CB74F /* ViewControllers */,
+				EA287FD11B922324000CB74F /* Main.storyboard */,
 				EACDD8FC1B9152A000958432 /* Images.xcassets */,
 				EACDD8FE1B9152A000958432 /* LaunchScreen.xib */,
 				EACDD8F31B9152A000958432 /* Supporting Files */,
@@ -98,7 +200,10 @@
 		EACDD9081B9152A000958432 /* HolidaysTests */ = {
 			isa = PBXGroup;
 			children = (
-				EACDD90B1B9152A000958432 /* HolidaysTests.swift */,
+				EAE630651B9235640026CD7A /* CountryModelTests.swift */,
+				EAE630671B9238460026CD7A /* ExtensionTests.swift */,
+				EA1A869A1B923D3700A7865A /* HelperTests.swift */,
+				EACDD90B1B9152A000958432 /* HolidayModelsTests.swift */,
 				EACDD9091B9152A000958432 /* Supporting Files */,
 			);
 			path = HolidaysTests;
@@ -119,9 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EACDD90F1B9152A000958432 /* Build configuration list for PBXNativeTarget "Holidays" */;
 			buildPhases = (
+				3FDA2C842B1DBFC94889AE6F /* Check Pods Manifest.lock */,
 				EACDD8EC1B9152A000958432 /* Sources */,
 				EACDD8ED1B9152A000958432 /* Frameworks */,
 				EACDD8EE1B9152A000958432 /* Resources */,
+				56529FDDB1B79FBE9EF2A7AE /* Embed Pods Frameworks */,
+				18F9130EC44F850A706EE8BF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,7 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EACDD8FB1B9152A000958432 /* Main.storyboard in Resources */,
+				EA287FD21B922324000CB74F /* Main.storyboard in Resources */,
 				EACDD9001B9152A000958432 /* LaunchScreen.xib in Resources */,
 				EACDD8FD1B9152A000958432 /* Images.xcassets in Resources */,
 			);
@@ -207,13 +315,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18F9130EC44F850A706EE8BF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FDA2C842B1DBFC94889AE6F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		56529FDDB1B79FBE9EF2A7AE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EACDD8EC1B9152A000958432 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EACDD8F81B9152A000958432 /* ViewController.swift in Sources */,
+				EA287FC21B9222E8000CB74F /* CalendarHelper.swift in Sources */,
+				EA287FCF1B922311000CB74F /* CountriesViewController.swift in Sources */,
+				EA287FC71B9222F9000CB74F /* Holiday.swift in Sources */,
+				EA287FCD1B922311000CB74F /* CountriesTableViewCell.swift in Sources */,
+				EA1A869D1B9240CA00A7865A /* BaseHolidaysViewController.swift in Sources */,
+				EA287FC01B9222E8000CB74F /* Extensions.swift in Sources */,
+				EA1A869F1B9241C500A7865A /* BaseHolidaysTableViewController.swift in Sources */,
+				EA287FC81B9222F9000CB74F /* Country.swift in Sources */,
+				EA1A86A11B9246B800A7865A /* EventStoreHelper.swift in Sources */,
+				EA287FC31B9222E8000CB74F /* BackgroundDataAccess.swift in Sources */,
+				EA287FBD1B9222E8000CB74F /* DataAccess.swift in Sources */,
+				EA287FCE1B922311000CB74F /* HolidayTableViewCell.swift in Sources */,
+				EA287FBF1B9222E8000CB74F /* Repository.swift in Sources */,
+				EA287FC41B9222E8000CB74F /* NotificationHelper.swift in Sources */,
 				EACDD8F61B9152A000958432 /* AppDelegate.swift in Sources */,
+				EA287FD01B922311000CB74F /* HolidaysTableViewController.swift in Sources */,
+				EA287FC11B9222E8000CB74F /* Style.swift in Sources */,
+				EA287FBE1B9222E8000CB74F /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +393,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EACDD90C1B9152A000958432 /* HolidaysTests.swift in Sources */,
+				EAE630681B9238460026CD7A /* ExtensionTests.swift in Sources */,
+				EAE630661B9235640026CD7A /* CountryModelTests.swift in Sources */,
+				EACDD90C1B9152A000958432 /* HolidayModelsTests.swift in Sources */,
+				EA1A869B1B923D3700A7865A /* HelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,14 +411,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EACDD8F91B9152A000958432 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EACDD8FA1B9152A000958432 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EACDD8FE1B9152A000958432 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -338,6 +505,7 @@
 		};
 		EACDD9101B9152A000958432 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26DCAD1C62A6C20A4AC2D1C6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Holidays/Info.plist;
@@ -348,6 +516,7 @@
 		};
 		EACDD9111B9152A000958432 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDDE5DED52581721E0DC99FA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Holidays/Info.plist;
@@ -409,6 +578,7 @@
 				EACDD9111B9152A000958432 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EACDD9121B9152A000958432 /* Build configuration list for PBXNativeTarget "HolidaysTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +587,7 @@
 				EACDD9141B9152A000958432 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

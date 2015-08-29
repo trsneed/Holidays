@@ -12,11 +12,25 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
+	var repository:Repository?
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
+		let dataAccess = DataAccess()
+		repository = Repository()
+		application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
 		return true
+	}
+	
+	func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+		let countryCode = NSUserDefaults.standardUserDefaults().objectForKey(StorageKeys.selectedCounty.rawValue) as? String
+		if let countryCode = countryCode{
+			Repository().checkIfHolidayAndRetrieveHoliday(countryCode, completionHandler: { (result) -> Void in
+				completionHandler(result)
+			})
+		} else {
+			completionHandler(UIBackgroundFetchResult.NoData)
+		}
 	}
 
 	func applicationWillResignActive(application: UIApplication) {
