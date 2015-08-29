@@ -19,7 +19,6 @@ public class Holiday: NSObject, NSCoding {
 	public let date:NSDate
 	public let localName:String
 	public let englishName:String
-
 	public lazy var shortDate:String = {
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.dateFormat =  NSDateFormatter.dateFormatFromTemplate("MMddyyyy", options: 0, locale: NSLocale.currentLocale())

@@ -12,6 +12,7 @@
 		EA1A869D1B9240CA00A7865A /* BaseHolidaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A869C1B9240CA00A7865A /* BaseHolidaysViewController.swift */; };
 		EA1A869F1B9241C500A7865A /* BaseHolidaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A869E1B9241C500A7865A /* BaseHolidaysTableViewController.swift */; };
 		EA1A86A11B9246B800A7865A /* EventStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A86A01B9246B800A7865A /* EventStoreHelper.swift */; };
+		EA1A86A31B92589B00A7865A /* SavedHolidays.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A86A21B92589B00A7865A /* SavedHolidays.swift */; };
 		EA287FBD1B9222E8000CB74F /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FB51B9222E8000CB74F /* DataAccess.swift */; };
 		EA287FBE1B9222E8000CB74F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FB61B9222E8000CB74F /* Helpers.swift */; };
 		EA287FBF1B9222E8000CB74F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA287FB71B9222E8000CB74F /* Repository.swift */; };
@@ -52,6 +53,7 @@
 		EA1A869C1B9240CA00A7865A /* BaseHolidaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHolidaysViewController.swift; sourceTree = "<group>"; };
 		EA1A869E1B9241C500A7865A /* BaseHolidaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHolidaysTableViewController.swift; sourceTree = "<group>"; };
 		EA1A86A01B9246B800A7865A /* EventStoreHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStoreHelper.swift; sourceTree = "<group>"; };
+		EA1A86A21B92589B00A7865A /* SavedHolidays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedHolidays.swift; sourceTree = "<group>"; };
 		EA287FB51B9222E8000CB74F /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
 		EA287FB61B9222E8000CB74F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		EA287FB71B9222E8000CB74F /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				EA287FC51B9222F9000CB74F /* Holiday.swift */,
 				EA287FC61B9222F9000CB74F /* Country.swift */,
+				EA1A86A21B92589B00A7865A /* SavedHolidays.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				EA287FC71B9222F9000CB74F /* Holiday.swift in Sources */,
 				EA287FCD1B922311000CB74F /* CountriesTableViewCell.swift in Sources */,
 				EA1A869D1B9240CA00A7865A /* BaseHolidaysViewController.swift in Sources */,
+				EA1A86A31B92589B00A7865A /* SavedHolidays.swift in Sources */,
 				EA287FC01B9222E8000CB74F /* Extensions.swift in Sources */,
 				EA1A869F1B9241C500A7865A /* BaseHolidaysTableViewController.swift in Sources */,
 				EA287FC81B9222F9000CB74F /* Country.swift in Sources */,
