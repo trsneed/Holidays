@@ -7,17 +7,19 @@
 //
 
 import UIKit
-let calendarId = "calendarId"
+let calendarIdKey = "calendarIdKey"
 final class SavedHolidays: NSObject, NSCoding {
 	let calendarId:String
-	
 	init(calendarIdentifier:String){
 		self.calendarId = calendarIdentifier
 	}
 	
-	required init(coder aDecoder: NSCoder){
-		self.calendarId = aDecoder.decodeObjectForKey(calendarId) as! String
+	//MARK: NSCoding
+	
+	required init(coder aDecoder: NSCoder) {
+		self.calendarId = aDecoder.decodeObjectForKey(calendarIdKey) as! String
 	}
+	
 	func encodeWithCoder(aCoder: NSCoder) {
 		aCoder.encodeObject(self.calendarId, forKey: calendarId)
 	}

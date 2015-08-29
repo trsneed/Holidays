@@ -34,6 +34,8 @@ public class Holiday: NSObject, NSCoding {
 		date = Helpers.dateFromValues(year: year, month: month, day: day)
 	}
 	
+	//MARK: NSCoding
+	
 	public required init(coder aDecoder: NSCoder) {
 		self.date = aDecoder.decodeObjectForKey(HolidayKeys.dateKey.rawValue) as! NSDate
 		self.localName = aDecoder.decodeObjectForKey(HolidayKeys.localNameKey.rawValue) as! String
