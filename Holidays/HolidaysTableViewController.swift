@@ -22,6 +22,7 @@ class HolidaysTableViewController: BaseHolidaysTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.title = "Holidays"
+		let m = EventStoreHelper.sharedInstance
 		configureBarButtons()
 		if let countryCode = NSUserDefaults.standardUserDefaults().objectForKey(StorageKeys.selectedCounty.rawValue) as? String {
 			getHolidays(countryCode, onCompletion: {})
@@ -31,7 +32,6 @@ class HolidaysTableViewController: BaseHolidaysTableViewController {
     }
 	
 	func getHolidays(countryCode:String, onCompletion:(((Void))->Void)){
-		
 		self.repository!.getHolidaysForCountry(countryCode, year: 2015, onCompletion: { (holidays) -> Void in
 			self.holidays = holidays
 			self.tableView.reloadData()

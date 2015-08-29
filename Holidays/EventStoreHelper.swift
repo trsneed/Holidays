@@ -23,6 +23,36 @@ class EventStoreHelper: NSObject {
 	}
 	var eventStore:EKEventStore?
 	override init(){
+	//	self.init()
 		eventStore = EKEventStore()
+		//lets go ahead and call this
+		//self.checkAccessToEventStore()
 	}
+	
+	var hasAccess:Bool?
+	
+	func checkAccessToEventStore() {
+		let authStatus = EKEventStore.authorizationStatusForEntityType(EKEntityTypeEvent)
+		switch authStatus{
+		case .Denied, .Restricted:
+			self.hasAccess = false
+		case .Authorized:
+			self.hasAccess = true
+		case .NotDetermined:
+			var status:EKAuthorizationStatus
+			self.eventStore?.requestAccessToEntityType(EKEntityTypeEvent, completion: { (hasAccess, error) -> Void in
+				if let error = error{
+					self.hasAccess = false
+					println("maybe send a notification to start")
+				} else if hasAccess ?? false{
+					self.hasAccess = false
+				} else {
+					self.hasAccess = true
+				}
+			})
+		default:
+			println("I got nothing")
+		}
+	}
+
 }
