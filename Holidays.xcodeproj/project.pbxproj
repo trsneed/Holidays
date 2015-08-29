@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EACDD8F61B9152A000958432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDD8F51B9152A000958432 /* AppDelegate.swift */; };
+		EACDD8F81B9152A000958432 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDD8F71B9152A000958432 /* ViewController.swift */; };
+		EACDD8FB1B9152A000958432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACDD8F91B9152A000958432 /* Main.storyboard */; };
+		EACDD8FD1B9152A000958432 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACDD8FC1B9152A000958432 /* Images.xcassets */; };
+		EACDD9001B9152A000958432 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EACDD8FE1B9152A000958432 /* LaunchScreen.xib */; };
+		EACDD90C1B9152A000958432 /* HolidaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACDD90B1B9152A000958432 /* HolidaysTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EACDD9061B9152A000958432 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EACDD8E81B9152A000958432 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EACDD8EF1B9152A000958432;
+			remoteInfo = Holidays;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EACDD8F01B9152A000958432 /* Holidays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Holidays.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EACDD8F41B9152A000958432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EACDD8F51B9152A000958432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EACDD8F71B9152A000958432 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EACDD8FA1B9152A000958432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EACDD8FC1B9152A000958432 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EACDD8FF1B9152A000958432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EACDD9051B9152A000958432 /* HolidaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HolidaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EACDD90A1B9152A000958432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EACDD90B1B9152A000958432 /* HolidaysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EACDD8ED1B9152A000958432 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EACDD9021B9152A000958432 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EACDD8E71B9152A000958432 = {
+			isa = PBXGroup;
+			children = (
+				EACDD8F21B9152A000958432 /* Holidays */,
+				EACDD9081B9152A000958432 /* HolidaysTests */,
+				EACDD8F11B9152A000958432 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EACDD8F11B9152A000958432 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EACDD8F01B9152A000958432 /* Holidays.app */,
+				EACDD9051B9152A000958432 /* HolidaysTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EACDD8F21B9152A000958432 /* Holidays */ = {
+			isa = PBXGroup;
+			children = (
+				EACDD8F51B9152A000958432 /* AppDelegate.swift */,
+				EACDD8F71B9152A000958432 /* ViewController.swift */,
+				EACDD8F91B9152A000958432 /* Main.storyboard */,
+				EACDD8FC1B9152A000958432 /* Images.xcassets */,
+				EACDD8FE1B9152A000958432 /* LaunchScreen.xib */,
+				EACDD8F31B9152A000958432 /* Supporting Files */,
+			);
+			path = Holidays;
+			sourceTree = "<group>";
+		};
+		EACDD8F31B9152A000958432 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EACDD8F41B9152A000958432 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EACDD9081B9152A000958432 /* HolidaysTests */ = {
+			isa = PBXGroup;
+			children = (
+				EACDD90B1B9152A000958432 /* HolidaysTests.swift */,
+				EACDD9091B9152A000958432 /* Supporting Files */,
+			);
+			path = HolidaysTests;
+			sourceTree = "<group>";
+		};
+		EACDD9091B9152A000958432 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EACDD90A1B9152A000958432 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EACDD8EF1B9152A000958432 /* Holidays */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EACDD90F1B9152A000958432 /* Build configuration list for PBXNativeTarget "Holidays" */;
+			buildPhases = (
+				EACDD8EC1B9152A000958432 /* Sources */,
+				EACDD8ED1B9152A000958432 /* Frameworks */,
+				EACDD8EE1B9152A000958432 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Holidays;
+			productName = Holidays;
+			productReference = EACDD8F01B9152A000958432 /* Holidays.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EACDD9041B9152A000958432 /* HolidaysTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EACDD9121B9152A000958432 /* Build configuration list for PBXNativeTarget "HolidaysTests" */;
+			buildPhases = (
+				EACDD9011B9152A000958432 /* Sources */,
+				EACDD9021B9152A000958432 /* Frameworks */,
+				EACDD9031B9152A000958432 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EACDD9071B9152A000958432 /* PBXTargetDependency */,
+			);
+			name = HolidaysTests;
+			productName = HolidaysTests;
+			productReference = EACDD9051B9152A000958432 /* HolidaysTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EACDD8E81B9152A000958432 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = Sneed;
+				TargetAttributes = {
+					EACDD8EF1B9152A000958432 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					EACDD9041B9152A000958432 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = EACDD8EF1B9152A000958432;
+					};
+				};
+			};
+			buildConfigurationList = EACDD8EB1B9152A000958432 /* Build configuration list for PBXProject "Holidays" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EACDD8E71B9152A000958432;
+			productRefGroup = EACDD8F11B9152A000958432 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EACDD8EF1B9152A000958432 /* Holidays */,
+				EACDD9041B9152A000958432 /* HolidaysTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EACDD8EE1B9152A000958432 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EACDD8FB1B9152A000958432 /* Main.storyboard in Resources */,
+				EACDD9001B9152A000958432 /* LaunchScreen.xib in Resources */,
+				EACDD8FD1B9152A000958432 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EACDD9031B9152A000958432 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EACDD8EC1B9152A000958432 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EACDD8F81B9152A000958432 /* ViewController.swift in Sources */,
+				EACDD8F61B9152A000958432 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EACDD9011B9152A000958432 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EACDD90C1B9152A000958432 /* HolidaysTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EACDD9071B9152A000958432 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EACDD8EF1B9152A000958432 /* Holidays */;
+			targetProxy = EACDD9061B9152A000958432 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EACDD8F91B9152A000958432 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EACDD8FA1B9152A000958432 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EACDD8FE1B9152A000958432 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EACDD8FF1B9152A000958432 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EACDD90D1B9152A000958432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EACDD90E1B9152A000958432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EACDD9101B9152A000958432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Holidays/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EACDD9111B9152A000958432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Holidays/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EACDD9131B9152A000958432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HolidaysTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Holidays.app/Holidays";
+			};
+			name = Debug;
+		};
+		EACDD9141B9152A000958432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HolidaysTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Holidays.app/Holidays";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EACDD8EB1B9152A000958432 /* Build configuration list for PBXProject "Holidays" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EACDD90D1B9152A000958432 /* Debug */,
+				EACDD90E1B9152A000958432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EACDD90F1B9152A000958432 /* Build configuration list for PBXNativeTarget "Holidays" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EACDD9101B9152A000958432 /* Debug */,
+				EACDD9111B9152A000958432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EACDD9121B9152A000958432 /* Build configuration list for PBXNativeTarget "HolidaysTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EACDD9131B9152A000958432 /* Debug */,
+				EACDD9141B9152A000958432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EACDD8E81B9152A000958432 /* Project object */;
+}
