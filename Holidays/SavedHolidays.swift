@@ -7,11 +7,16 @@
 //
 
 import UIKit
+
 let calendarIdKey = "calendarIdKey"
+let holidayNameKey = "holidayNameKey"
+
 final class SavedHolidays: NSObject, NSCoding {
 	let calendarId:String
-	init(calendarIdentifier:String){
+	//let holidayNameCondensed:String
+	init(calendarIdentifier:String, holiday:Holiday){
 		self.calendarId = calendarIdentifier
+		
 	}
 	
 	//MARK: NSCoding

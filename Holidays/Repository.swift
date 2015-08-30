@@ -82,7 +82,7 @@ class Repository: NSObject {
 					let json = JSON(data: dataFromString)
 					var returnedArray = Array<Holiday>()
 					for (key: String, subJson: JSON) in json{
-						returnedArray.append(Holiday(jsonDict: subJson))
+						returnedArray.append(Holiday(jsonDict: subJson, countryCode: countryCode))
 					}
 					let value = NSDictionary(objectsAndKeys: returnedArray, "\(countryCode)_\(year)")
 					
@@ -132,7 +132,7 @@ class Repository: NSObject {
 			if let dataFromString = result.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false){
 				let json = JSON(data: dataFromString)
 				for (key: String, subJson: JSON) in json{
-					let holiday = Holiday(jsonDict: subJson)
+					let holiday = Holiday(jsonDict: subJson, countryCode: countryCode)
 					NotificationHelper.sendNotification(holiday)
 				}
 				completionHandler(.NewData)

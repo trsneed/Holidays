@@ -17,7 +17,7 @@ class HolidayModelsTests: XCTestCase {
 		let jsonString = "{\"date\":{\"day\":2,\"month\":12,\"year\":2015,\"dayOfWeek\":4},\"localName\":\"Ano Novo\",\"englishName\":\"New Year's Day\"}"
 		let dataFromString = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
 		let json = JSON(data: dataFromString!)
-		holiday = Holiday(jsonDict: json)
+		holiday = Holiday(jsonDict: json, countryCode: "ago")
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -35,5 +35,9 @@ class HolidayModelsTests: XCTestCase {
 		let expectedDate = "12/02/2015"
 		XCTAssertEqual(expectedDate, holiday.shortDate, "date not right")
 	}
-    
+	
+	func testHolidayKeyForCalendar(){
+		let expected = "AnoNovoNewYear'sDayago"
+		XCTAssertEqual(expected, holiday.keyToSaveToCalendar, "key not matching")
+	}
 }
