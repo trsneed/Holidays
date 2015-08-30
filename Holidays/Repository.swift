@@ -25,7 +25,7 @@ enum ParamType:String {
 	case toDate = "toDate"
 }
 let apiRoot = "http://kayaposoft.com/enrico/json/v1.0/?"
-
+let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
 let action = "action"
 //getPublicHolidaysForYear&year=2013&country=est&region=
 class Repository: NSObject {
@@ -57,7 +57,7 @@ class Repository: NSObject {
 		
 		//check if exists
 		let filemgr = NSFileManager.defaultManager()
-		let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+		
 		
 		let docsDir = dirPaths[0] as! String
 		dataFilePath = docsDir.stringByAppendingPathComponent("\(countryCode)_data.archive")

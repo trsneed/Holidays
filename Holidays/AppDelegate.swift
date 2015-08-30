@@ -18,20 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		let dataAccess = DataAccess()
 		repository = Repository()
-		application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+	//	application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
 		return true
 	}
 	
-	func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-		let countryCode = NSUserDefaults.standardUserDefaults().objectForKey(StorageKeys.selectedCounty.rawValue) as? String
-		if let countryCode = countryCode{
-			Repository().checkIfHolidayAndRetrieveHoliday(countryCode, completionHandler: { (result) -> Void in
-				completionHandler(result)
-			})
-		} else {
-			completionHandler(UIBackgroundFetchResult.NoData)
-		}
-	}
+//	func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+//		let countryCode = NSUserDefaults.standardUserDefaults().objectForKey(StorageKeys.selectedCounty.rawValue) as? String
+//		if let countryCode = countryCode{
+//			Repository().checkIfHolidayAndRetrieveHoliday(countryCode, completionHandler: { (result) -> Void in
+//				completionHandler(result)
+//			})
+//		} else {
+//			completionHandler(UIBackgroundFetchResult.NoData)
+//		}
+//	}
 
 	func applicationWillResignActive(application: UIApplication) {
 		// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

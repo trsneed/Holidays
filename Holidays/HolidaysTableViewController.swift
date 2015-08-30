@@ -160,14 +160,45 @@ class HolidaysTableViewController: BaseHolidaysTableViewController {
     }
 	
 	override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+		let eventStore = EventStoreHelper.sharedInstance
+		let holidayToActionUpon = self.holidays![indexPath.row]
+		if eventStore.savedHolidays.allKeysForObject(holidayToActionUpon.keyToSaveToCalendar).count == 0{
 		//alright lets tackle adding this to the calendar
-		let more = UITableViewRowAction(style: .Normal, title: "Add To Calendar") { action, index in
-			println("more button tapped")
-		}
-		more.backgroundColor = UIColor.greenColor()
-
+			let addToCalendar = UITableViewRowAction(style: .Normal, title: "Add To Calendar") { action, index in
+				eventStore.checkAccessToEventStore()
+				if eventStore.hasAccess ?? false{
+					eventStore.saveHolidayToEventStore(holidayToActionUpon)
+				} else {
+					self.showNoAccessMessage()
+				}
+				tableView.setEditing(false, animated: true)
+			}
+			addToCalendar.backgroundColor = UIColor.greenColor()
 		
-		return [more]
+			return [addToCalendar]
+		} else{
+			let removeFromCalendar = UITableViewRowAction(style: .Normal, title: "Remove from Calendar") { action, index in
+				eventStore.checkAccessToEventStore()
+				if eventStore.hasAccess ?? false{
+					eventStore.removeHolidayFromEventStore(holidayToActionUpon)
+				} else {
+					self.showNoAccessMessage()
+				}
+				tableView.setEditing(false, animated: true)
+			}
+			removeFromCalendar.backgroundColor = UIColor.redColor()
+			
+			return [removeFromCalendar]
+		}
+	}
+	
+	func showNoAccessMessage(){
+		let alertView = UIAlertController(title: "Hmm, something went wrong",
+			message: "Please make sure you have given 'Holidays' access to creating events in your calendar",
+			preferredStyle: .Alert)
+		let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+		alertView.addAction(okAction)
+		self.presentViewController(alertView, animated: true, completion: nil)
 	}
 	override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
 		// the cells you would like the actions to appear needs to be editable

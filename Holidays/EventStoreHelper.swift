@@ -31,6 +31,23 @@ class EventStoreHelper: NSObject {
 	
 	var hasAccess:Bool?
 	let calendarName = "Holidays"
+	
+	lazy var savedHolidays:NSMutableDictionary = {
+		let docsDir = dirPaths[0] as! String
+		let dataFilePath = docsDir.stringByAppendingPathComponent("saved_events_data.archive")
+		var dataDictionary = NSMutableDictionary()
+		if self.fileManager.fileExistsAtPath(dataFilePath) {
+			dataDictionary = NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath) as! NSMutableDictionary
+		}
+		return dataDictionary
+	}()
+	
+	
+	
+	lazy var fileManager:NSFileManager = {
+		return NSFileManager.defaultManager()
+	}()
+	
 	private let calendarIdKey = "holidayCalendar"
 	func checkAccessToEventStore() {
 		let authStatus = EKEventStore.authorizationStatusForEntityType(EKEntityTypeEvent)
@@ -56,35 +73,67 @@ class EventStoreHelper: NSObject {
 		}
 	}
 	
-	func saveHolidayToEventStore(holiday:Holiday, keepTrying:Bool = true){
+	func saveHolidayToEventStore(holiday:Holiday){
 		let calendars = eventStore!.calendarsForEntityType(EKEntityTypeEvent) as! [EKCalendar]
-		//find our calendar
-		var calendar:EKCalendar?
-		if let found = find(lazy(calendars).map({ $0.calendarIdentifier == "Foo" }), true) {
-			calendar = calendars[found]
-		}
+		let calendarId = NSUserDefaults.standardUserDefaults().objectForKey(calendarIdKey) as? String
+		if let calendarId = calendarId{
+			//find our calendar
+			var calendar:EKCalendar?
+			if let found = find(lazy(calendars).map({ $0.calendarIdentifier == calendarId}), true) {
+				calendar = calendars[found]
+			}
 		
-		if let calendar = calendar{
-			let startDate = holiday.date
-			var event = EKEvent(eventStore: self.eventStore)
-			event.calendar = calendar
-			event.allDay = true
-			event.title = holiday.englishName
-			var error: NSError?
-			let result = eventStore!.saveEvent(event, span: EKSpanThisEvent, error: &error)
-			if result == false {
-				if let error = error {
-					println("An error occured \(error)")
+			if let calendar = calendar{
+				let startDate = holiday.date
+				var event = EKEvent(eventStore: self.eventStore)
+				event.calendar = calendar
+				event.allDay = true
+				event.startDate = startDate
+				event.endDate = startDate
+				event.title = holiday.englishName
+				var error: NSError?
+				let result = eventStore!.saveEvent(event, span: EKSpanThisEvent, error: &error)
+				if result == false {
+					if let error = error {
+						println("An error occured \(error)")
+					}
+				} else {
+					self.saveEventAndResultToDisk(event.eventIdentifier, holidayNameKey: holiday.keyToSaveToCalendar)
 				}
 			}
 		} else {
-			if keepTrying{
-				createCalendar()
-				//and recurse :)
-				self.saveHolidayToEventStore(holiday, keepTrying:false)
-			}
+			createCalendar()
 		}
 
+	}
+	
+	func removeHolidayFromEventStore(holiday:Holiday){
+		let calendars = eventStore!.calendarsForEntityType(EKEntityTypeEvent) as! [EKCalendar]
+		//find our calendar
+		let calendarId = NSUserDefaults.standardUserDefaults().objectForKey(calendarIdKey) as? String
+		if let calendarId = calendarId{
+			var calendar:EKCalendar?
+			if let found = find(lazy(calendars).map({ $0.calendarIdentifier == calendarId }), true) {
+				calendar = calendars[found]
+			}
+			if let calendar = calendar{
+				let eventKey = savedHolidays.allKeysForObject(holiday.keyToSaveToCalendar)
+				var error: NSError?
+				for key in eventKey{
+					let event = eventStore?.eventWithIdentifier(key as! String)
+					eventStore?.removeEvent(event, span: EKSpanThisEvent, commit: false, error: &error)
+					savedHolidays.removeObjectForKey(key)
+				}
+				eventStore?.commit(&error)
+				if let error = error {
+					println("An error occured \(error)")
+				} else {
+					saveToDisk()
+				}
+			} else {
+				println("uh-oh")
+			}
+		}
 	}
 	
 	private func createCalendar(){
@@ -111,6 +160,20 @@ class EventStoreHelper: NSObject {
 			}
 		}
 	}
+	
+	private func saveEventAndResultToDisk(eventID:String, holidayNameKey:String){
+		savedHolidays[eventID] = holidayNameKey
+		saveToDisk()
+	}
+	
+	private func saveToDisk(){
+		let docsDir = dirPaths[0] as! String
+		let dataFilePath = docsDir.stringByAppendingPathComponent("saved_events_data.archive")
+		NSKeyedArchiver.archiveRootObject(savedHolidays, toFile: dataFilePath)
+
+	}
+	
+	
 	
 
 
