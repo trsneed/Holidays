@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9D0D46BB-8B77-49F5-9C43-9E1934023847</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Holidays</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1577B87FDE57436F2254B8E03C4FE0C2BE228B4C</key>
+		<string>https://github.com/trsneed/Holidays.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Holidays.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1577B87FDE57436F2254B8E03C4FE0C2BE228B4C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/trsneed/Holidays.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1577B87FDE57436F2254B8E03C4FE0C2BE228B4C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1577B87FDE57436F2254B8E03C4FE0C2BE228B4C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Holidays</string>
+		</dict>
+	</array>
+</dict>
+</plist>

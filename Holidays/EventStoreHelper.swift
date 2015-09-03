@@ -23,10 +23,7 @@ class EventStoreHelper: NSObject {
 	}
 	var eventStore:EKEventStore?
 	override init(){
-	//	self.init()
 		eventStore = EKEventStore()
-		//lets go ahead and call this
-		//self.checkAccessToEventStore()
 	}
 	
 	var hasAccess:Bool?
@@ -73,66 +70,69 @@ class EventStoreHelper: NSObject {
 		}
 	}
 	
-	func saveHolidayToEventStore(holiday:Holiday){
+	func saveHolidayToEventStore(holiday:Holiday, keepTrying:Bool = true){
 		let calendars = eventStore!.calendarsForEntityType(EKEntityTypeEvent) as! [EKCalendar]
 		let calendarId = NSUserDefaults.standardUserDefaults().objectForKey(calendarIdKey) as? String
-		if let calendarId = calendarId{
-			//find our calendar
-			var calendar:EKCalendar?
-			if let found = find(lazy(calendars).map({ $0.calendarIdentifier == calendarId}), true) {
-				calendar = calendars[found]
-			}
+
+		//find our calendar
+		var calendar:EKCalendar?
+		if let found = find(lazy(calendars).map({ $0.calendarIdentifier == calendarId}), true) {
+			calendar = calendars[found]
+		}
 		
-			if let calendar = calendar{
-				let startDate = holiday.date
-				var event = EKEvent(eventStore: self.eventStore)
-				event.calendar = calendar
-				event.allDay = true
-				event.startDate = startDate
-				event.endDate = startDate
-				event.title = holiday.englishName
-				var error: NSError?
-				let result = eventStore!.saveEvent(event, span: EKSpanThisEvent, error: &error)
-				if result == false {
-					if let error = error {
-						println("An error occured \(error)")
-					}
-				} else {
-					self.saveEventAndResultToDisk(event.eventIdentifier, holidayNameKey: holiday.keyToSaveToCalendar)
+		if let calendar = calendar{
+			let startDate = holiday.date
+			var event = EKEvent(eventStore: self.eventStore)
+			event.calendar = calendar
+			event.allDay = true
+			event.title = holiday.englishName
+			event.startDate = holiday.date
+			event.endDate = holiday.date
+			var error: NSError?
+			let result = eventStore!.saveEvent(event, span: EKSpanThisEvent, error: &error)
+			if result == false {
+				if let error = error {
+					println("An error occured \(error)")
 				}
+			} else {
+				self.saveEventAndResultToDisk(event.eventIdentifier, holidayNameKey: holiday.keyToSaveToCalendar)
 			}
 		} else {
-			createCalendar()
+			if keepTrying{
+				createCalendar()
+				//and recurse once :)
+				self.saveHolidayToEventStore(holiday, keepTrying:false)
+			}
 		}
 
 	}
 	
 	func removeHolidayFromEventStore(holiday:Holiday){
 		let calendars = eventStore!.calendarsForEntityType(EKEntityTypeEvent) as! [EKCalendar]
-		//find our calendar
 		let calendarId = NSUserDefaults.standardUserDefaults().objectForKey(calendarIdKey) as? String
-		if let calendarId = calendarId{
-			var calendar:EKCalendar?
-			if let found = find(lazy(calendars).map({ $0.calendarIdentifier == calendarId }), true) {
-				calendar = calendars[found]
+		
+		//find our calendar
+		var calendar:EKCalendar?
+		if let found = find(lazy(calendars).map({ $0.calendarIdentifier == calendarId}), true) {
+			calendar = calendars[found]
+		}
+		
+		if let calendar = calendar{
+			let eventKey = savedHolidays.allKeysForObject(holiday.keyToSaveToCalendar)
+			var error: NSError?
+			for key in eventKey{
+				let event = eventStore?.eventWithIdentifier(key as! String)
+				eventStore?.removeEvent(event, span: EKSpanThisEvent, commit: false, error: &error)
+				savedHolidays.removeObjectForKey(key)
 			}
-			if let calendar = calendar{
-				let eventKey = savedHolidays.allKeysForObject(holiday.keyToSaveToCalendar)
-				var error: NSError?
-				for key in eventKey{
-					let event = eventStore?.eventWithIdentifier(key as! String)
-					eventStore?.removeEvent(event, span: EKSpanThisEvent, commit: false, error: &error)
-					savedHolidays.removeObjectForKey(key)
-				}
-				eventStore?.commit(&error)
-				if let error = error {
-					println("An error occured \(error)")
-				} else {
-					saveToDisk()
-				}
+			eventStore?.commit(&error)
+			if let error = error {
+				println("An error occured \(error)")
 			} else {
-				println("uh-oh")
+				saveToDisk()
 			}
+		} else {
+			println("uh-oh")
 		}
 	}
 	
@@ -144,10 +144,25 @@ class EventStoreHelper: NSObject {
 			
 			//get a local calendar type
 			let sourcesInEventStore = eventStore.sources() as! [EKSource]
-			appCalendar.source = sourcesInEventStore.filter{
+			//appCalendar.source =
+			let sources = sourcesInEventStore.filter({
 					(source: EKSource) -> Bool in
-					source.sourceType.value == EKSourceTypeLocal.value
-					}.first
+					source.sourceType.value == EKSourceTypeLocal.value  || (source.sourceType.value == EKSourceTypeCalDAV.value  && source.title.lowercaseString == "icloud")
+					})
+			
+			for source in sources{
+				if (appCalendar.source == nil && source.sourceType.value == EKSourceTypeLocal.value){
+					appCalendar.source = source
+				}
+				
+				if (source.sourceType.value == EKSourceTypeCalDAV.value && source.title.lowercaseString == "icloud"){
+					if(source.calendarsForEntityType(EKEntityTypeEvent).count > 0){
+						appCalendar.source = source
+						break
+					}
+				}
+			}
+			
 			//save that calendar
 			var error: NSError? = nil
 			let calendarWasSaved = eventStore.saveCalendar(appCalendar, commit: true, error: &error)
@@ -172,45 +187,4 @@ class EventStoreHelper: NSObject {
 		NSKeyedArchiver.archiveRootObject(savedHolidays, toFile: dataFilePath)
 
 	}
-	
-	
-	
-
-
-	
-//	func insertEvent(store: EKEventStore) {
-//		// 1
-//		let calendars = store.calendarsForEntityType(EKEntityTypeEvent)
-//			as! [EKCalendar]
-//		
-//		for calendar in calendars {
-//			// 2
-//			if calendar.title == "ioscreator" {
-//				// 3
-//				let startDate = NSDate()
-//				// 2 hours
-//				let endDate = startDate.dateByAddingTimeInterval(2 * 60 * 60)
-//				
-//				// 4
-//				// Create Event
-//				var event = EKEvent(eventStore: store)
-//				event.calendar = calendar
-//				
-//				event.title = "New Meeting"
-//				event.startDate = startDate
-//				event.endDate = endDate
-//				
-//				// 5
-//				// Save Event in Calendar
-//				var error: NSError?
-//				let result = store.saveEvent(event, span: EKSpanThisEvent, error: &error)
-//				
-//				if result == false {
-//					if let theError = error {
-//						println("An error occured \(theError)")
-//					}
-//				}
-//			}
-//		}
-//	}
 }

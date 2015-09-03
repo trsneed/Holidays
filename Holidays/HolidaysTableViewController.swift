@@ -22,13 +22,14 @@ class HolidaysTableViewController: BaseHolidaysTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.title = "Holidays"
-		let m = EventStoreHelper.sharedInstance
+		
 		configureBarButtons()
 		if let countryCode = NSUserDefaults.standardUserDefaults().objectForKey(StorageKeys.selectedCounty.rawValue) as? String {
 			getHolidays(countryCode, onCompletion: {})
 		} else {
 			presentChangeLocation()
 		}
+		
     }
 	
 	func getHolidays(countryCode:String, onCompletion:(((Void))->Void)){
@@ -165,26 +166,28 @@ class HolidaysTableViewController: BaseHolidaysTableViewController {
 		if eventStore.savedHolidays.allKeysForObject(holidayToActionUpon.keyToSaveToCalendar).count == 0{
 		//alright lets tackle adding this to the calendar
 			let addToCalendar = UITableViewRowAction(style: .Normal, title: "Add To Calendar") { action, index in
-				eventStore.checkAccessToEventStore()
-				if eventStore.hasAccess ?? false{
-					eventStore.saveHolidayToEventStore(holidayToActionUpon)
-				} else {
-					self.showNoAccessMessage()
-				}
-				tableView.setEditing(false, animated: true)
+				eventStore.checkAccessToEventStore()//{ (complete) -> Void in
+					if eventStore.hasAccess ?? false{
+						eventStore.saveHolidayToEventStore(holidayToActionUpon)
+					} else {
+						self.showNoAccessMessage()
+					}
+					tableView.setEditing(false, animated: true)
+				//})
 			}
 			addToCalendar.backgroundColor = UIColor.greenColor()
 		
 			return [addToCalendar]
 		} else{
 			let removeFromCalendar = UITableViewRowAction(style: .Normal, title: "Remove from Calendar") { action, index in
-				eventStore.checkAccessToEventStore()
-				if eventStore.hasAccess ?? false{
-					eventStore.removeHolidayFromEventStore(holidayToActionUpon)
-				} else {
-					self.showNoAccessMessage()
-				}
-				tableView.setEditing(false, animated: true)
+				eventStore.checkAccessToEventStore()//{ (complete) -> Void in
+					if eventStore.hasAccess ?? false{
+						eventStore.removeHolidayFromEventStore(holidayToActionUpon)
+					} else {
+						self.showNoAccessMessage()
+					}
+					tableView.setEditing(false, animated: true)
+			//	})
 			}
 			removeFromCalendar.backgroundColor = UIColor.redColor()
 			
